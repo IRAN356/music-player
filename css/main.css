@@ -776,3 +776,85 @@ letter-spacing:4px;
 transform:scale(1.08);
 }
   }
+.footer{
+
+margin-top:80px;
+padding:40px 20px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:30px;
+
+border-top:1px solid rgba(255,255,255,.1);
+
+background:rgba(255,255,255,.03);
+
+backdrop-filter:blur(15px);
+
+}
+
+
+.footer-brand h3{
+
+font-size:32px;
+font-weight:900;
+
+background:linear-gradient(90deg,#00eaff,#9b5cff);
+
+-webkit-background-clip:text;
+color:transparent;
+
+}
+
+
+.footer-brand p{
+
+color:rgba(255,255,255,.6);
+font-size:14px;
+
+}
+
+
+.creator{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+
+.creator span{
+
+font-size:12px;
+color:rgba(255,255,255,.6);
+
+}
+
+
+.creator strong{
+
+font-size:28px;
+font-weight:900;
+
+letter-spacing:3px;
+
+background:linear-gradient(90deg,#00eaff,#ff4fd8);
+
+-webkit-background-clip:text;
+color:transparent;
+
+text-shadow:0 0 25px rgba(0,234,255,.4);
+
+}
+
+
+.creator-fa{
+
+font-size:18px!important;
+margin-top:5px;
+
+font-family:"Vazirmatn",sans-serif;
+
+}
