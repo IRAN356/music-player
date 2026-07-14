@@ -1,32 +1,30 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-const cards=document.querySelectorAll(".card");
+const themeBtn = document.getElementById("themeBtn");
 
-const observer=new IntersectionObserver((entries)=>{
+if (themeBtn) {
 
-entries.forEach(entry=>{
+themeBtn.addEventListener("click", () => {
 
-if(entry.isIntersecting){
+document.body.classList.toggle("light");
 
-entry.target.animate([
-
-{
-opacity:0,
-transform:"translateY(40px)"
-},
-
-{
-opacity:1,
-transform:"translateY(0)"
-}
-
-],{
-
-duration:700,
-fill:"forwards",
-easing:"ease"
+themeBtn.textContent =
+document.body.classList.contains("light")
+? "☀️"
+: "🌙";
 
 });
+
+}
+
+
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach((entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add("show");
 
 observer.unobserve(entry.target);
 
@@ -34,62 +32,130 @@ observer.unobserve(entry.target);
 
 });
 
-},{
-threshold:.2
-});
+}, {
 
-cards.forEach(card=>{
-
-card.style.opacity="0";
-
-observer.observe(card);
+threshold: 0.15
 
 });
 
-const buttons=document.querySelectorAll("button");
 
-buttons.forEach(button=>{
+document.querySelectorAll(".card,.feature,.glass-card,.about-card").forEach((el) => {
 
-button.addEventListener("touchstart",()=>{
+el.classList.add("hidden");
 
-button.style.transform="scale(.96)";
-
-});
-
-button.addEventListener("touchend",()=>{
-
-button.style.transform="scale(1)";
+observer.observe(el);
 
 });
 
-button.addEventListener("mousedown",()=>{
 
-button.style.transform="scale(.96)";
+document.querySelectorAll("button").forEach((button) => {
 
-});
+button.addEventListener("pointerdown", () => {
 
-button.addEventListener("mouseup",()=>{
-
-button.style.transform="scale(1)";
+button.style.transform = "scale(.96)";
 
 });
 
-button.addEventListener("mouseleave",()=>{
+button.addEventListener("pointerup", () => {
 
-button.style.transform="scale(1)";
+button.style.transform = "";
+
+});
+
+button.addEventListener("pointerleave", () => {
+
+button.style.transform = "";
 
 });
 
 });
 
-const themeBtn=document.getElementById("themeBtn");
 
-themeBtn.addEventListener("click",()=>{
+const startBtn = document.querySelector(".primary");
 
-document.body.classList.toggle("light");
+if (startBtn) {
 
-themeBtn.textContent=document.body.classList.contains("light") ? "☀️" : "🌙";
+startBtn.addEventListener("click", () => {
+
+alert("به NEXORA AI خوش آمدید 🚀");
 
 });
+
+}
+
+
+const featureBtn = document.querySelector(".secondary");
+
+if (featureBtn) {
+
+featureBtn.addEventListener("click", () => {
+
+document.querySelector(".tools")?.scrollIntoView({
+
+behavior: "smooth"
+
+});
+
+});
+
+}
+
+
+const navItems = document.querySelectorAll("nav li");
+
+navItems.forEach((item) => {
+
+item.addEventListener("click", () => {
+
+const text = item.textContent.trim();
+
+if (text === "امکانات") {
+
+document.querySelector(".tools")?.scrollIntoView({
+
+behavior: "smooth"
+
+});
+
+}
+
+if (text === "درباره") {
+
+document.querySelector(".about")?.scrollIntoView({
+
+behavior: "smooth"
+
+});
+
+}
+
+if (text === "خانه") {
+
+window.scrollTo({
+
+top: 0,
+
+behavior: "smooth"
+
+});
+
+}
+
+});
+
+});
+
+
+const navBtn = document.querySelector(".nav-btn");
+
+if (navBtn) {
+
+navBtn.addEventListener("click", () => {
+
+window.location.href = "admin.html";
+
+});
+
+}
 
 });
