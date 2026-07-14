@@ -743,5 +743,36 @@ font-size:34px;
 font-size:44px;
 
 }
+.designer{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+margin-left:15px;
+line-height:1.1;
+}
 
+.designer-fa{
+font-family:"Vazirmatn", sans-serif;
+font-size:11px;
+font-weight:500;
+color:rgba(255,255,255,.65);
+}
+
+.designer-en{
+font-family:"Vazirmatn", sans-serif;
+font-size:18px;
+font-weight:900;
+letter-spacing:2px;
+background:linear-gradient(90deg,#00eaff,#9b5cff);
+-webkit-background-clip:text;
+color:transparent;
+text-shadow:0 0 20px rgba(0,234,255,.35);
+transition:.3s;
+}
+
+.designer-en:hover{
+letter-spacing:4px;
+transform:scale(1.08);
+}
   }
