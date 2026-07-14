@@ -488,3 +488,38 @@ ABOLFAZL
 </body>
 
 </html>
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:.7s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+body.light{
+background:#f6f8fb;
+color:#111827;
+}
+
+body.light header{
+background:rgba(255,255,255,.8);
+}
+
+body.light .card,
+body.light .feature,
+body.light .glass-card,
+body.light .about-card,
+body.light .footer{
+background:#ffffff;
+color:#111827;
+border-color:rgba(0,0,0,.08);
+}
+
+body.light p,
+body.light span,
+body.light li{
+color:#5b6473;
+}
